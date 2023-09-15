@@ -6,8 +6,8 @@ import "./Auth.css"
 export const Register = () => {
     const firstName = useRef()
     const lastName = useRef()
-    const username = useRef()
-    const bio = useRef()
+    const email = useRef()
+    const location = useRef()
     const password = useRef()
     const verifyPassword = useRef()
     const passwordDialog = useRef()
@@ -18,10 +18,10 @@ export const Register = () => {
 
         if (password.current.value === verifyPassword.current.value) {
             const newUser = {
-                "username": username.current.value,
+                "email": email.current.value,
                 "first_name": firstName.current.value,
                 "last_name": lastName.current.value,
-                "bio": bio.current.value,
+                "location": location.current.value,
                 "password": password.current.value
             }
 
@@ -56,8 +56,8 @@ export const Register = () => {
                     <input ref={lastName} type="text" name="lastName" className="form-control" placeholder="Last name" required />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="inputUsername">Username</label>
-                    <input ref={username} type="text" name="username" className="form-control" placeholder="Username" required />
+                    <label htmlFor="inputUsername">Email</label>
+                    <input ref={email} type="email" name="email" className="form-control" placeholder="email" required />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="inputPassword"> Password </label>
@@ -68,8 +68,8 @@ export const Register = () => {
                     <input ref={verifyPassword} type="password" name="verifyPassword" className="form-control" placeholder="Verify password" required />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="verifyPassword"> Verify Password </label>
-                    <textarea ref={bio} name="bio" className="form-control" placeholder="Let other gamers know a little bit about you..." />
+                    <label htmlFor="verifyPassword"> Location </label>
+                    <textarea ref={location} name="location" className="form-control" placeholder="Tell us where you're from" />
                 </fieldset>
                 <fieldset style={{
                     textAlign: "center"
