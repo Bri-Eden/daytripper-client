@@ -16,6 +16,7 @@ export const ApplicationViews = () => {
                 <Route path="/trips" element={<TripList />} />
                 <Route path="/newtrip" element={<TripForm />} />
                 <Route path="/trips/:id/edit" element={<TripEdit />} />
+
             </Route>
         </Routes>
     </>

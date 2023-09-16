@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { getUserTrips } from "../../managers/TripManager.js"
+import { getUserTrips, deleteTrip } from "../../managers/TripManager.js"
 
 export const TripList = (props) => {
     const [trips, setTrips] = useState([])
@@ -11,6 +11,14 @@ export const TripList = (props) => {
         getUserTrips().then(data => setTrips(data))
     }, [])
 
+    const handleDelete = (id) => {
+        if (window.confirm("Cancel Trip? 🥺")) {
+            deleteTrip(id)
+                .then(() => {
+                    getUserTrips().then(data => setTrips(data))
+                })
+        }
+    }
 
     return (
         <article className="trips">
@@ -25,6 +33,13 @@ export const TripList = (props) => {
                                 navigate({ pathname: `/trips/${trip.id}/edit` })
                             }}
                         >Edit Trip</button>
+                        <button
+                            onClick={() => handleDelete(trip.id)}
+                            className="btn btn-danger"
+                        >
+                            Delete This Trip
+                        </button>
+
                     </section>
                 })
             }
