@@ -46,4 +46,14 @@ export const updateTrip = (id, trip) => {
         },
         body: JSON.stringify(trip),
     })
+}
+
+
+export const deleteTrip = (id) => {
+    return fetch(`http://localhost:8000/trips/${id}`, {
+        method: "DELETE",
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("lu_token")}`
+        }
+    })
 };
