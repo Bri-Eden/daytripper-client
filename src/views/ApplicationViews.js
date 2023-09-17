@@ -5,6 +5,7 @@ import { Authorized } from "./Authorized"
 import { TripList } from "../components/trip/TripsList"
 import { TripForm } from "../components/trip/TripForm"
 import { TripEdit } from "../components/trip/TripEdit"
+import { SingleTripInfo } from "../components/trip/SingleTripPage"
 
 
 export const ApplicationViews = () => {
@@ -16,7 +17,7 @@ export const ApplicationViews = () => {
                 <Route path="/trips" element={<TripList />} />
                 <Route path="/newtrip" element={<TripForm />} />
                 <Route path="/trips/:id/edit" element={<TripEdit />} />
-
+                <Route path="/trips/:id" element={<SingleTripInfo />} />
             </Route>
         </Routes>
     </>
