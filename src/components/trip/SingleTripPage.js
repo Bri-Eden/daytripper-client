@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { getSingleTrip, deleteTrip } from "../../managers/TripManager.js"
 
 export const SingleTripInfo = (props) => {
-    const [trip, setTrip] = useState([])
-    const [filteredTrips, setFiltered] = useState([])
+    const [trip, setTrip] = useState({})
     const navigate = useNavigate()
+    const { id } = useParams()
 
     useEffect(() => {
-        getSingleTrip().then(data => setTrip(data))
-    }, [])
+        getSingleTrip(id).then(data => setTrip(data))
+    }, [id])
 
     const handleDelete = (id) => {
         if (window.confirm("Cancel Trip? 🥺")) {
@@ -22,27 +22,28 @@ export const SingleTripInfo = (props) => {
 
     return (
         <article className="trips">
-            {
-                trip.map(trip => {
-                    return <section key={`trip--${trip.id}`} className="trip">
-                        <div className="trip_destination">{trip.destination} from {trip.arrival} to {trip.departure}</div>
-                        <div className="trip_climate">{trip.climate}</div>
-                        <div className="trip_photo">{trip.cover_photo}</div>
-                        <button className="btn btn-2 btn-sep icon-create"
-                            onClick={() => {
-                                navigate({ pathname: `/trips/${trip.id}/edit` })
-                            }}
-                        >Edit Trip</button>
-                        <button
-                            onClick={() => handleDelete(trip.id)}
-                            className="btn btn-danger"
-                        >
-                            Delete This Trip
-                        </button>
-
-                    </section>
-                })
-            }
+            {trip ? (
+                <section key={`trip--${trip.id}`} className="selected_trip">
+                    <div className="trip_destination">
+                        {trip.destination} from {trip.arrival} to {trip.departure}
+                    </div>
+                    <div className="trip_climate">{trip.climate}</div>
+                    <div className="trip_photo">{trip.cover_photo}</div>
+                    <button
+                        className="btn btn-2 btn-sep icon-create"
+                        onClick={() => {
+                            navigate({ pathname: `/trips/${trip.id}/edit` });
+                        }}
+                    >
+                        Edit Trip
+                    </button>
+                    <button onClick={() => handleDelete(trip.id)} className="btn btn-danger">
+                        Delete This Trip
+                    </button>
+                </section>
+            ) : (
+                <div>Loading...</div>
+            )}
         </article>
     )
 }
