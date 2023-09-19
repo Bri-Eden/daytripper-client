@@ -28,7 +28,20 @@ export const SingleTripInfo = (props) => {
                         {trip.destination} from {trip.arrival} to {trip.departure}
                     </div>
                     <div className="trip_climate">{trip.climate}</div>
+
                     <div className="trip_photo">{trip.cover_photo}</div>
+
+                    <div
+                        className="packlist-card"
+                        key={`packlist--${trip.id}`}
+                        onClick={() => {
+                            navigate(`/packlists/${trip.id}`);
+                        }}
+                    >
+
+                        <div className="trip-name">Pack List</div>
+
+                    </div>
                     <button
                         className="btn btn-2 btn-sep icon-create"
                         onClick={() => {

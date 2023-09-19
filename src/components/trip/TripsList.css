@@ -1,0 +1,38 @@
+/* Styling for the container */
+.trips-container {
+    background-color: #c57213;
+    color: #f7f1d4;
+    padding: 20px;
+}
+
+/* Styling for the heading */
+.trips-container h2 {
+    font-family: 'Caprasimo', cursive;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Styling for the trips list */
+.trips-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Styling for each trip card */
+.trips-card {
+    background-color: #114740;
+    border: 2px solid #c57213;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: calc(50% - 10px);
+    cursor: pointer;
+}
+
+/* Styling for the trip name */
+.trip-name {
+    font-family: 'Caprasimo', cursive;
+    font-size: 18px;
+    color: #f7f1d4;
+}

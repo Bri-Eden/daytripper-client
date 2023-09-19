@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom"
-import "./NavBar.css"
+import "./ProfilePage.css"
 
-export const NavBar = () => {
+export const ProfilePage = () => {
     const navigate = useNavigate()
     return (
         <><head><style>
