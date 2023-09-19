@@ -7,14 +7,14 @@ export const getSinglePackList = (id) => {
         .then(response => response.json())
 }
 
-export const createPackList = () => {
+export const createPackList = (packlist) => {
     return fetch("http://localhost:8000/packlists", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
             "Authorization": `Token ${localStorage.getItem("lu_token")}`
         },
-        body: JSON.stringify()
+        body: JSON.stringify(packlist)
     })
         .then(response => response.json())
 }
@@ -62,7 +62,7 @@ export const updateItem = (id, packitem) => {
 
 
 export const deleteItem = (id) => {
-    return fetch(`http://localhost:8000/packitems/${id}`, {
+    return fetch(`http://localhost:8000/packlists/${id}`, {
         method: "DELETE",
         headers: {
             "Authorization": `Token ${localStorage.getItem("lu_token")}`

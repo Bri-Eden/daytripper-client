@@ -10,6 +10,8 @@ import { PackListList } from "../components/trip/PackListList"
 import { ItemList } from "../components/trip/ItemList"
 import { ItemForm } from "../components/trip/ItemForm"
 import { PackListForm } from "../components/trip/PackListForm"
+import { }
+import { ProfilePage } from "../components/trip/ProfilePage"
 
 
 export const ApplicationViews = () => {
@@ -26,6 +28,7 @@ export const ApplicationViews = () => {
                 <Route path="/packitems" element={<ItemList />} />
                 <Route path="/newitem" element={<ItemForm />} />
                 <Route path="/packlist/add" element={<PackListForm />} />
+                <Route path="/profile" element={<ProfilePage />} />
             </Route>
         </Routes>
     </>

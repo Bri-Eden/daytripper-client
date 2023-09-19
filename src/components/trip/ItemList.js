@@ -33,6 +33,14 @@ export const ItemList = (props) => {
                     </section>
 
                 ))}
+                <button
+                    className="btn btn-2 btn-sep icon-create"
+                    onClick={() => {
+                        navigate({ pathname: `/packlist/add` });
+                    }}
+                >
+                    Add Item To Pack List
+                </button>
             </div>
         </div>
     );
