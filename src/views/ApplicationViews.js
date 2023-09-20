@@ -10,14 +10,12 @@ import { PackListList } from "../components/trip/PackListList"
 import { ItemList } from "../components/trip/ItemList"
 import { ItemForm } from "../components/trip/ItemForm"
 import { PackListForm } from "../components/trip/PackListForm"
-import { }
 import { ProfilePage } from "../components/trip/ProfilePage"
 
-
-export const ApplicationViews = () => {
+export const ApplicationViews = ({ token, setToken }) => {
     return <>
         <Routes>
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login setToken={setToken} />} />
             <Route path="/register" element={<Register />} />
             <Route element={<Authorized />}>
                 <Route path="/trips" element={<TripList />} />
@@ -28,7 +26,7 @@ export const ApplicationViews = () => {
                 <Route path="/packitems" element={<ItemList />} />
                 <Route path="/newitem" element={<ItemForm />} />
                 <Route path="/packlist/add" element={<PackListForm />} />
-                <Route path="/profile" element={<ProfilePage />} />
+                <Route path="/planner" element={<ProfilePage token={token} />} />
             </Route>
         </Routes>
     </>

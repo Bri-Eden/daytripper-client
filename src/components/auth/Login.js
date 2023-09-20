@@ -4,7 +4,7 @@ import { loginUser } from "../../managers/AuthManager"
 import "./Auth.css"
 
 
-export const Login = () => {
+export const Login = ({ setToken }) => {
     const username = useRef()
     const password = useRef()
     const invalidDialog = useRef()
@@ -19,8 +19,8 @@ export const Login = () => {
         loginUser(user)
             .then(res => {
                 if ("valid" in res && res.valid && "token" in res) {
-                    localStorage.setItem("lu_token", res.token)
-                    navigate("/profile")
+                    setToken(res.token)
+                    navigate("/planner")
                 }
                 else {
                     invalidDialog.current.showModal()

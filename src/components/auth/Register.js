@@ -9,6 +9,7 @@ export const Register = () => {
     const email = useRef()
     const location = useRef()
     const password = useRef()
+    const photo = useRef()
     const verifyPassword = useRef()
     const passwordDialog = useRef()
     const navigate = useNavigate()
@@ -22,14 +23,15 @@ export const Register = () => {
                 "first_name": firstName.current.value,
                 "last_name": lastName.current.value,
                 "location": location.current.value,
-                "password": password.current.value
+                "password": password.current.value,
+                "photo": photo.current.value
             }
 
             registerUser(newUser)
                 .then(res => {
                     if ("token" in res) {
                         localStorage.setItem("lu_token", res.token)
-                        navigate("/")
+                        navigate("/profile")
                     }
                 })
         } else {
@@ -68,8 +70,12 @@ export const Register = () => {
                     <input ref={verifyPassword} type="password" name="verifyPassword" className="form-control" placeholder="Verify password" required />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="verifyPassword"> Location </label>
+                    <label htmlFor="enterLocation"> Location </label>
                     <textarea ref={location} name="location" className="form-control" placeholder="Tell us where you're from" />
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="enterPhoto"> Photo </label>
+                    <textarea ref={photo} name="photo" className="form-control" placeholder="Profile Photo" />
                 </fieldset>
                 <fieldset style={{
                     textAlign: "center"

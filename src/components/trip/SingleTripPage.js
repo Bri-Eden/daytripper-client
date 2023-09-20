@@ -17,6 +17,9 @@ export const SingleTripInfo = (props) => {
                 .then(() => {
                     getSingleTrip().then(data => setTrip(data))
                 })
+                .then(() => {
+                    navigate(`/trips`);
+                })
         }
     }
 

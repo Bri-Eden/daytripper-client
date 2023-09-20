@@ -1,36 +1,111 @@
-.navbar {
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
+.profile {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: left;
+    align-content: space-around;
+    justify-content: flex-start;
+    float: center;
+    gap: 20px;
+    width: 25%;
+    /* Adjust the width as needed */
 }
 
-.navbar__item {
-    flex-basis: 25%;
-    list-style-type: none;
+.info-profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    float: left;
+    margin: 30px;
+    width: 50%;
+    /* Adjust the width as needed */
 }
 
-ul.navbar {
+.myprofile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-pictures {
+    width: 100px;
+    /* Adjust the width as needed */
+}
+
+.full-name,
+.location {
+    font-family: 'Caprasimo', cursive;
+    text-align: center;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    float: right;
+    justify-content: center;
+    height: 50vh;
+    background-color: #f2f2f2;
+    padding: 10%;
+    width: 50%;
+    /* Adjust the width as needed */
+}
+
+.profile-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.links-box {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-ul.navbar__item {
-    display: inline-block;
-    margin-right: 10px;
+.trips-box,
+.plan-box,
+.inventory-box {
+    margin-bottom: 10px;
 }
 
-ul.navbar__item:last-child {
-    margin-right: 0;
-}
-
-a.nav-link {
+.trips-link,
+.plan-box,
+.inventory-box {
     font-family: 'Caprasimo', cursive;
-    font-size: 18px;
-    color: #ff5564;
+    font-size: 24px;
+    color: #333;
     text-decoration: none;
 }
 
-a.nav-link:hover {
-    color: #ffe55b;
+.trips-link:hover,
+.plan-box:hover,
+.inventory-box:hover {
+    color: #ff5564;
+}
+
+.nav-item {
+    margin-bottom: 10px;
+}
+
+.nav-link {
+    font-family: 'Caprasimo', cursive;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+}
+
+.fakeLink {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: 'Caprasimo', cursive;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+}
+
+.fakeLink:hover {
+    color: #ff5564;
 }
