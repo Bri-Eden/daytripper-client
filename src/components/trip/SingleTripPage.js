@@ -45,6 +45,17 @@ export const SingleTripInfo = (props) => {
                         <div className="trip-name">Pack List</div>
 
                     </div>
+                    <div
+                        className="itinerary-card"
+                        key={`activities--${trip.id}`}
+                        onClick={() => {
+                            navigate(`/activities/${trip.id}`);
+                        }}
+                    >
+
+                        <div className="itinerary-button">Itinerary</div>
+
+                    </div>
                     <button
                         className="btn btn-2 btn-sep icon-create"
                         onClick={() => {

@@ -1,111 +1,95 @@
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 .profile {
+    /* Remove the width property */
     display: flex;
-    align-content: space-around;
-    justify-content: flex-start;
-    float: center;
+    justify-content: space-between;
+    /* Adjust the alignment as needed */
     gap: 20px;
-    width: 25%;
-    /* Adjust the width as needed */
-}
-
-.info-profile {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    float: left;
-    margin: 30px;
-    width: 50%;
-    /* Adjust the width as needed */
 }
 
 .myprofile {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    font-family: 'Caprasimo', cursive;
+    border: 2px solid #000;
+    border-radius: 25%;
+    padding: 100px;
+    margin: 30px;
+    width: 50%;
 }
 
 .profile-pictures {
-    width: 100px;
-    /* Adjust the width as needed */
-}
-
-.full-name,
-.location {
-    font-family: 'Caprasimo', cursive;
-    text-align: center;
-}
-
-.profile-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    float: right;
-    justify-content: center;
-    height: 50vh;
-    background-color: #f2f2f2;
-    padding: 10%;
-    width: 50%;
-    /* Adjust the width as needed */
-}
-
-.profile-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.links-box {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    width: 200px;
+    /* Adjust the size as needed */
+    height: 250px;
+    /* Adjust the size as needed */
+    border-radius: 50%;
+    /* Apply the round border */
+    border: 2px solid #000;
+    /* Add a border if desired */
 }
 
 .trips-box,
 .plan-box,
 .inventory-box {
-    margin-bottom: 10px;
+    list-style-type: none;
+    /* Remove bullet points */
+    text-align: center;
+    /* Center the links */
+    border: 2px solid #000;
+    border-radius: 25%;
 }
 
-.trips-link,
-.plan-box,
-.inventory-box {
+.trips-link {
     font-family: 'Caprasimo', cursive;
-    font-size: 24px;
-    color: #333;
+    font-size: 1.2em;
+    /* Responsive font size */
     text-decoration: none;
+    color: #000;
+    /* Set link color */
 }
 
-.trips-link:hover,
-.plan-box:hover,
-.inventory-box:hover {
-    color: #ff5564;
+.trips-link:hover {
+    color: #ff0000;
+    /* Change link color on hover */
+    /* Add any other interactive styles here */
 }
 
-.nav-item {
-    margin-bottom: 10px;
+.full-name {
+    font-size: 1.2em;
+    /* Adjust the size as needed */
+    margin-top: 10px;
 }
 
-.nav-link {
+.info-profile {
+    /* Remove the width property */
+    display: flex;
+    margin: 30px;
+    flex-grow: 1;
+    /* Allow the container to grow and occupy available space */
+}
+
+.profile-container {
+    /* Remove the width property */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     font-family: 'Caprasimo', cursive;
-    font-size: 18px;
-    color: #333;
-    text-decoration: none;
+    padding: 100px;
+    margin: 30px;
+    width: 50%;
+
+    /* Adjust the height as needed */
+    background-color: #f2f2f2;
+    padding: 10%;
+    /* Remove the width property */
 }
 
-.fakeLink {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-family: 'Caprasimo', cursive;
-    font-size: 18px;
-    color: #333;
-    text-decoration: none;
-}
-
-.fakeLink:hover {
-    color: #ff5564;
+.profile-link {
+    /* Add flex-grow property to allow the links to fill the available space */
+    flex-grow: 1;
 }

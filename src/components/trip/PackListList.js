@@ -16,6 +16,22 @@ export const PackListList = () => {
         getPackItems().then(data => setPackItems(data))
     }, [])
 
+    const updatedList = () => {
+        getSinglePackList(id).then(data => setPackListItem(data))
+    }
+
+    const handleDelete = (id) => {
+        if (window.confirm("Remove Item?")) {
+            deleteItem(id)
+                .then(() => {
+                    getSinglePackList().then(data => setPackListItem(data))
+                })
+                .then(() => {
+                    updatedList();
+                })
+        }
+    }
+
     const getPackList = (id) => {
         getSinglePackList(id).then(data => setPackListItem(data))
     }
@@ -32,7 +48,9 @@ export const PackListList = () => {
                     <div className="item-description">
                         {item.packitem.description}
                     </div>
-
+                    <button onClick={() => handleDelete(item.id)} className="btn btn-danger">
+                        Remove Item from List
+                    </button>
                 </section>
 
             ))}
