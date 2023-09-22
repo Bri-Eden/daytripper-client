@@ -1,0 +1,94 @@
+/* Define the base styles */
+
+
+.article {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.trips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.selected_trip {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.selected_trip:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.trip_destination {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.trip_climate {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.trip_photo {
+    background-color: #ccc;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.packlist-card,
+.itinerary-card {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.packlist-card:hover,
+.itinerary-card:hover {
+    background-color: #ddd;
+}
+
+.btn {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff6347;
+}
+
+.btn-2 {
+    background-color: #888;
+}
+
+.btn-2:hover {
+    background-color: #666;
+}
+
+.icon-create {
+    margin-right: 10px;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}

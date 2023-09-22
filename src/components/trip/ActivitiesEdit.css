@@ -1,0 +1,51 @@
+.article {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.select_list {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+.select_list:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.item-description {
+    margin-bottom: 5px;
+}
+
+.btn {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff6347;
+}
+
+.icon-create {
+    margin-right: 10px;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}

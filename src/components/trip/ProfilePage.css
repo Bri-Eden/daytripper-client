@@ -1,36 +1,95 @@
-.navbar {
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
+.profile {
+    /* Remove the width property */
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: left;
+    justify-content: space-between;
+    /* Adjust the alignment as needed */
+    gap: 20px;
 }
 
-.navbar__item {
-    flex-basis: 25%;
-    list-style-type: none;
-}
-
-ul.navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-ul.navbar__item {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-ul.navbar__item:last-child {
-    margin-right: 0;
-}
-
-a.nav-link {
+.myprofile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     font-family: 'Caprasimo', cursive;
-    font-size: 18px;
-    color: #ff5564;
-    text-decoration: none;
+    border: 2px solid #000;
+    border-radius: 25%;
+    padding: 100px;
+    margin: 30px;
+    width: 50%;
 }
 
-a.nav-link:hover {
-    color: #ffe55b;
+.profile-pictures {
+    width: 200px;
+    /* Adjust the size as needed */
+    height: 250px;
+    /* Adjust the size as needed */
+    border-radius: 50%;
+    /* Apply the round border */
+    border: 2px solid #000;
+    /* Add a border if desired */
+}
+
+.trips-box,
+.plan-box,
+.inventory-box {
+    list-style-type: none;
+    /* Remove bullet points */
+    text-align: center;
+    /* Center the links */
+    border: 2px solid #000;
+    border-radius: 25%;
+}
+
+.trips-link {
+    font-family: 'Caprasimo', cursive;
+    font-size: 1.2em;
+    /* Responsive font size */
+    text-decoration: none;
+    color: #000;
+    /* Set link color */
+}
+
+.trips-link:hover {
+    color: #ff0000;
+    /* Change link color on hover */
+    /* Add any other interactive styles here */
+}
+
+.full-name {
+    font-size: 1.2em;
+    /* Adjust the size as needed */
+    margin-top: 10px;
+}
+
+.info-profile {
+    /* Remove the width property */
+    display: flex;
+    margin: 30px;
+    flex-grow: 1;
+    /* Allow the container to grow and occupy available space */
+}
+
+.profile-container {
+    /* Remove the width property */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Caprasimo', cursive;
+    padding: 100px;
+    margin: 30px;
+    width: 50%;
+
+    /* Adjust the height as needed */
+    background-color: #f2f2f2;
+    padding: 10%;
+    /* Remove the width property */
+}
+
+.profile-link {
+    /* Add flex-grow property to allow the links to fill the available space */
+    flex-grow: 1;
 }

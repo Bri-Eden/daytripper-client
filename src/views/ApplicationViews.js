@@ -10,14 +10,15 @@ import { PackListList } from "../components/trip/PackListList"
 import { ItemList } from "../components/trip/ItemList"
 import { ItemForm } from "../components/trip/ItemForm"
 import { PackListForm } from "../components/trip/PackListForm"
-import { }
 import { ProfilePage } from "../components/trip/ProfilePage"
+import { ActivitiesList } from "../components/trip/ActivitiesList"
+import { ActivitiesForm } from "../components/trip/ActivitiesForm"
+import { ActivityEdit } from "../components/trip/ActivitiesEdit"
 
-
-export const ApplicationViews = () => {
+export const ApplicationViews = ({ token, setToken }) => {
     return <>
         <Routes>
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login setToken={setToken} />} />
             <Route path="/register" element={<Register />} />
             <Route element={<Authorized />}>
                 <Route path="/trips" element={<TripList />} />
@@ -28,7 +29,10 @@ export const ApplicationViews = () => {
                 <Route path="/packitems" element={<ItemList />} />
                 <Route path="/newitem" element={<ItemForm />} />
                 <Route path="/packlist/add" element={<PackListForm />} />
-                <Route path="/profile" element={<ProfilePage />} />
+                <Route path="/activities/:id" element={<ActivitiesList />} />
+                <Route path="/activities/add" element={<ActivitiesForm />} />
+                <Route path="/activities/:id/edit" element={<ActivityEdit />} />
+                <Route path="/planner" element={<ProfilePage token={token} />} />
             </Route>
         </Routes>
     </>

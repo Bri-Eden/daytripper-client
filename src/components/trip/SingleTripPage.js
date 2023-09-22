@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { getSingleTrip, deleteTrip } from "../../managers/TripManager.js"
+import "./SingleTrip.css"
 
 export const SingleTripInfo = (props) => {
     const [trip, setTrip] = useState({})
@@ -16,6 +17,9 @@ export const SingleTripInfo = (props) => {
             deleteTrip(id)
                 .then(() => {
                     getSingleTrip().then(data => setTrip(data))
+                })
+                .then(() => {
+                    navigate(`/trips`);
                 })
         }
     }
@@ -40,6 +44,17 @@ export const SingleTripInfo = (props) => {
                     >
 
                         <div className="trip-name">Pack List</div>
+
+                    </div>
+                    <div
+                        className="itinerary-card"
+                        key={`activities--${trip.id}`}
+                        onClick={() => {
+                            navigate(`/activities/${trip.id}`);
+                        }}
+                    >
+
+                        <div className="itinerary-button">Itinerary</div>
 
                     </div>
                     <button
