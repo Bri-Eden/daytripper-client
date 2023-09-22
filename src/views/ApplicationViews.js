@@ -13,6 +13,7 @@ import { PackListForm } from "../components/trip/PackListForm"
 import { ProfilePage } from "../components/trip/ProfilePage"
 import { ActivitiesList } from "../components/trip/ActivitiesList"
 import { ActivitiesForm } from "../components/trip/ActivitiesForm"
+import { ActivityEdit } from "../components/trip/ActivitiesEdit"
 
 export const ApplicationViews = ({ token, setToken }) => {
     return <>
@@ -29,6 +30,8 @@ export const ApplicationViews = ({ token, setToken }) => {
                 <Route path="/newitem" element={<ItemForm />} />
                 <Route path="/packlist/add" element={<PackListForm />} />
                 <Route path="/activities/:id" element={<ActivitiesList />} />
+                <Route path="/activities/add" element={<ActivitiesForm />} />
+                <Route path="/activities/:id/edit" element={<ActivityEdit />} />
                 <Route path="/planner" element={<ProfilePage token={token} />} />
             </Route>
         </Routes>

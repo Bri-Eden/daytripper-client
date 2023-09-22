@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { getSingleTrip, deleteTrip } from "../../managers/TripManager.js"
+import "./SingleTrip.css"
 
 export const SingleTripInfo = (props) => {
     const [trip, setTrip] = useState({})
